@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings (defaults overridden dynamically by DatabaseConfig) -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/smart_service_db?useSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=UTC&amp;createDatabaseIfNotExist=true</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">CHANGE_ME</property>
+
+        <!-- Hibernate SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- Echo SQL queries to stdout/logger (disabled by default) -->
+        <property name="hibernate.show_sql">false</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <!-- Schema update strategy -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Thread-bound session context -->
+        <property name="hibernate.current_session_context_class">thread</property>
+
+        <!-- Entity mappings -->
+        <mapping class="com.smartservice.entity.User"/>
+        <mapping class="com.smartservice.entity.Category"/>
+        <mapping class="com.smartservice.entity.ServiceRequest"/>
+        <mapping class="com.smartservice.entity.RequestHistory"/>
+        <mapping class="com.smartservice.entity.Escalation"/>
+    </session-factory>
+</hibernate-configuration>

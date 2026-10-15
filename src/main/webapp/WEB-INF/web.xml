@@ -10,6 +10,11 @@
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 
+    <!-- Application Lifecycle Listener for SLA Checker and Resource Cleanup -->
+    <listener>
+        <listener-class>com.smartservice.util.SlaBackgroundWorker</listener-class>
+    </listener>
+
     <!-- Session configuration: 30 minutes timeout -->
     <session-config>
         <session-timeout>30</session-timeout>
